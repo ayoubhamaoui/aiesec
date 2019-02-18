@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +14,7 @@ class App extends Component {
   componentDidMount() {
     fetch('https://gisapi-web-staging-1636833739.eu-west-1.elb.amazonaws.com/v2/opportunities/search?access_token=dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c',{
       credentials: 'include',
+      mode: 'cors',
     })
       .then(res => res.json())
       .then(json => this.setState({ 
